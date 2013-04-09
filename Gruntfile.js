@@ -10,13 +10,13 @@ module.exports = function(grunt) {
             build : {
                 src : 'js/src/main.js',
                 dest : 'build/main.min.js'
-            },
-            my_target : {
-                files : {
-                    'js/libs/backbone/backbone.min.js' : ['js/src/backbone/backbone.js'],
-                    'js/libs/underscore/underscore.min.js' : ['js/src/underscore/underscore.js']
-                }
             }
+            /*my_target : {
+             files : {
+             'js/libs/backbone/backbone.min.js' : ['js/src/backbone/backbone.js'],
+             'js/libs/underscore/underscore.min.js' : ['js/src/underscore/underscore.js']
+             }
+             }*/
         },
         stylus : {
             compile : {
@@ -30,13 +30,13 @@ module.exports = function(grunt) {
             }
         },
         jshint : {
-            all : ['Gruntfile.js', 'js/src/*.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js']
+            files : ['Gruntfile.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js']
         },
         requirejs : {
             compile : {
                 options : {
-                    name: 'main',
-                    baseUrl: 'js/src',
+                    name : 'main',
+                    baseUrl : 'js/src',
                     mainConfigFile : 'js/src/main.js',
                     out : 'js/src/optimized/optimized.js'
                 }

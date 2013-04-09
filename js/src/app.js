@@ -1,6 +1,8 @@
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
+define(['jquery', 'underscore', 'backbone', 'router'], function($, _, Backbone, Router) {
     var initialize = function() {
-        $this = $("body");
+        Backbone.emulateJSON = true;
+        Backbone.emulateHTTP = true;
+        Router.initialize();
     };
     return {
         initialize : initialize
