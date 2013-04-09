@@ -32,6 +32,16 @@ module.exports = function(grunt) {
         jshint : {
             all : ['Gruntfile.js', 'js/src/*.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js']
         },
+        requirejs : {
+            compile : {
+                options : {
+                    name: 'main',
+                    baseUrl: 'js/src',
+                    mainConfigFile : 'js/src/main.js',
+                    out : 'js/src/optimized/optimized.js'
+                }
+            }
+        },
         watch : {
             files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
             tasks : ['stylus']
@@ -50,7 +60,10 @@ module.exports = function(grunt) {
     //loading watch plugin
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    //loading requireJS plugin
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'watch']);
+    grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'requirejs', 'watch']);
 
 };
