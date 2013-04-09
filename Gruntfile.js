@@ -8,8 +8,8 @@ module.exports = function(grunt) {
                 banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build : {
-                src : '<%= pkg.name %>.js',
-                dest : 'build/<%= pkg.name %>.min.js'
+                src : 'js/src/main.js',
+                dest : 'build/main.min.js'
             },
             my_target : {
                 files : {
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
             }
         },
         jshint : {
-            all : ['Gruntfile.js']
+            all : ['Gruntfile.js', 'js/src/*.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js']
         },
         watch : {
             files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
