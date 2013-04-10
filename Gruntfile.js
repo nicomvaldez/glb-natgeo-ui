@@ -43,8 +43,14 @@ module.exports = function(grunt) {
             }
         },
         watch : {
-            files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
-            tasks : ['stylus']
+            stylusListener : {
+                files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
+                tasks : ['stylus']
+            },
+            jsHintListener : {
+                files : ['Gruntfile.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js'],
+                tasks : ['jshint']
+            }            
         }
     });
 
