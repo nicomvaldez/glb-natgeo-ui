@@ -43,7 +43,7 @@ app.get('/topo/:id', function(req, res) {
 	res.send(topos[id]);
 });
 
-app.get('/topo/byname/:name', function(req, res) {
+app.get('/topo/name/:name', function(req, res) {
 	var result = {};
 	var name = req.params.name;
 	

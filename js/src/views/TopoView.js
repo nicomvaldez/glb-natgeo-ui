@@ -7,10 +7,10 @@ define([
 ], function($, _, Backbone, TopoCollection, topoListTemplate) {
 
     var TopoView = Backbone.View.extend({
-        el : $("ul.content"),
-
-        initialize : function() {
+    
+         initialize : function() {
             var _this = this;
+            this.el = $(".list");
 
             var onDataHandler = function(collection) {
                 _this.render();
@@ -27,10 +27,10 @@ define([
                 topos : this.topoCollection.toJSON(),
                 _ : _
             };
-
             var compiledTemplate = _.template(topoListTemplate, data);
-            this.$el.append(compiledTemplate);
+            this.el.html(compiledTemplate);
         }
+
     });
 
     return TopoView;
