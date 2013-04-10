@@ -43,8 +43,14 @@ module.exports = function(grunt) {
             }
         },
         watch : {
-            files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
-            tasks : ['stylus']
+            stylusListener : {
+                files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
+                tasks : ['stylus']
+            },
+            jsHintListener : {
+                files : ['Gruntfile.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js'],
+                tasks : ['jshint']
+            }            
         }
     });
 
@@ -62,6 +68,9 @@ module.exports = function(grunt) {
 
     //loading requireJS plugin
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    
+    //loadin css lint plugin
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'requirejs', 'watch']);
