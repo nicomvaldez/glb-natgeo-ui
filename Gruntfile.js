@@ -68,6 +68,9 @@ module.exports = function(grunt) {
 
     //loading requireJS plugin
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    
+    //loadin css lint plugin
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'requirejs', 'watch']);
