@@ -7,7 +7,7 @@ var allowCrossDomain = function(req, res, next) {
     console.log(req.headers.origin);
     // Added other domains you want the server to give access to
     // WARNING - Be careful with what origins you give access to
-    var allowedHost = ['http://127.0.0.1', 'null'];
+    var allowedHost = ['http://127.0.0.1', 'http://localhost'];
 
     if (allowedHost.indexOf(req.headers.origin) !== -1) {
         res.header('Access-Control-Allow-Credentials', true);

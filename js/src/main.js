@@ -6,6 +6,13 @@ require.config({
         backbone : '../libs/backbone/backbone.min',
         templates : '../../templates'
     },
+    text : {
+        useXhr : function(url, protocol, hostname, port) {
+            // allow cross-domain requests
+            // remote server allows CORS
+            return true;
+        }
+    },
     shim : {
         underscore : {
             exports : '_'
