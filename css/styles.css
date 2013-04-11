@@ -1,4 +1,4 @@
-#wrapper{width:900px;margin:auto}
+#wrapper{width:900px;margin:auto;font-family:verdana}
 li.list{border-top:1px solid #96d1f8;background:linear-gradient(top,65 a9d7,#3e779d);background:#3e779d;padding:5px 10px;border-radius:8px;box-shadow:#000 0 1px 0;text-shadow:rgba(0,0,0,0.4) 0 1px 0;color:#fff;font-size:14px;text-decoration:none;vertical-align:middle;text-transform:capitalize;list-style:none;width:100px;cursor:pointer;margin:3px}
 li.list:hover{border-top-color:#28597a;background:#28597a;color:#ccc}
 li.list:active{border-top-color:#18496a;background:#18496a}
