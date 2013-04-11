@@ -42,6 +42,13 @@ module.exports = function(grunt) {
                 }
             }
         },
+        qunit : {
+            all : {
+                options : {
+                    urls : ['http://localhost/test/test.html']
+                }
+            }
+        },
         watch : {
             stylusListener : {
                 files : ['css/stylus/includes/*.styl', 'css/stylus/*.styl'],
@@ -50,7 +57,7 @@ module.exports = function(grunt) {
             jsHintListener : {
                 files : ['Gruntfile.js', 'js/src/collections/*.js', 'js/src/models/*.js', 'js/src/views/*.js'],
                 tasks : ['jshint']
-            }            
+            }
         }
     });
 
@@ -68,11 +75,14 @@ module.exports = function(grunt) {
 
     //loading requireJS plugin
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    
-    //loadin css lint plugin
+
+    //loading css lint plugin
     grunt.loadNpmTasks('grunt-contrib-csslint');
+    
+    //loading qunit plugin
+    grunt.loadNpmTasks('grunt-contrib-qunit');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'requirejs', 'watch']);
+    grunt.registerTask('default', ['uglify', 'stylus', 'jshint', 'requirejs', 'qunit', 'watch']);
 
 };
