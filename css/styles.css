@@ -1,10 +1,10 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-family:inherit;font-size:100%;vertical-align:baseline}
-body{line-height:1;color:#000;background:#fff}
-ol,ul{list-style:none}
-table{border-collapse:separate;border-spacing:0;vertical-align:middle}
-caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
-a img{border:none}
-article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{margin:0;padding:0;border:0;outline:0;display:block}
-audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
-audio:not([controls]),[hidden]{display:none}
-.wrapper{background-color:#ccc}
+#wrapper{width:900px;margin:auto;font-family:verdana}
+li.list{border-top:1px solid #96d1f8;background:linear-gradient(top,65 a9d7,#3e779d);background:#3e779d;padding:5px 10px;border-radius:8px;box-shadow:#000 0 1px 0;text-shadow:rgba(0,0,0,0.4) 0 1px 0;color:#fff;font-size:14px;text-decoration:none;vertical-align:middle;text-transform:capitalize;list-style:none;width:100px;cursor:pointer;margin:3px}
+li.list:hover{border-top-color:#28597a;background:#28597a;color:#ccc}
+li.list:active{border-top-color:#18496a;background:#18496a}
+header,footer{text-shadow:rgba(0,0,0,0.4) 0 1px 0;color:#fff;font-size:14px;text-decoration:none;clear:both;background:#3e779d}
+header{padding:10px;text-align:center;}
+header h1{font-size:24px}
+footer{height:20px;padding:5px;text-align:center}
+#menu{float:left;height:80%;width:10%}
+#container{float:left;height:200px}

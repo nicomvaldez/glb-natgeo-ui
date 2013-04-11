@@ -1,8 +1,63 @@
-@import 'nib'
 //Full Eric Meyer CSS Reset
 global-reset();
 reset-html5();
 
-.wrapper {
-    background-color: content_bg
-}
+#wrapper
+    width 900px
+    margin auto
+    font-family verdana
+
+li.list
+    border-top 1px solid #96d1f8
+    background linear-gradient(top, 65a9d7, content_bg)
+    background content_bg
+    padding 5px 10px
+    border-radius (8px)
+    box-shadow (black 0 1px 0)
+    text-shadow rgba(0,0,0,.4) 0 1px 0
+    color white
+    font-size 14px
+    text-decoration none
+    vertical-align middle
+    text-transform capitalize
+    list-style none
+    width 100px
+    cursor pointer
+    margin 3px
+
+li.list:hover
+    border-top-color hover
+    background hover
+    color #ccc
+
+li.list:active
+   border-top-color activate
+   background activate
+
+header, footer
+    text-shadow rgba(0,0,0,.4) 0 1px 0
+    color white
+    font-size 14px
+    text-decoration none
+    clear both
+    background content_bg
+    
+header
+    padding 10px
+    text-align center
+    h1
+        font-size 24px
+
+footer
+    height 20px
+    padding 5px
+    text-align center
+
+#menu
+	float left
+	height 80%
+	width 10%
+
+#container
+    float left
+    height 200px

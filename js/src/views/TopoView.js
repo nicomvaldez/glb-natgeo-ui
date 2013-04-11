@@ -7,8 +7,8 @@ define([
 ], function($, _, Backbone, TopoCollection, topoListTemplate) {
 
     var TopoView = Backbone.View.extend({
-
-        initialize : function() {
+    
+         initialize : function() {
             var _this = this;
             this.el = $(".list");
 
