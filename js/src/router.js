@@ -3,8 +3,9 @@ define([
   'underscore',
   'backbone',
   'views/TopoView',
-  'views/HomeView'
-], function($, _, Backbone, TopoView, HomeView) {
+  'views/HomeView',
+  'views/FormView'
+], function($, _, Backbone, TopoView, HomeView, FormView) {
   
  var AppRouter = Backbone.Router.extend({
     routes: {
@@ -20,6 +21,8 @@ define([
     var app_router = new AppRouter;
     
     var homeView = new HomeView();
+    var formView = new FormView();
+    formView.render();
 
     app_router.on('route:defaultAction', function (actions) {
         // By default go to topos view (when the url does not match)
@@ -28,6 +31,7 @@ define([
     
     app_router.on('route:showTopos', function(){
         var topoView = new TopoView();
+        
     });    
   
   };
