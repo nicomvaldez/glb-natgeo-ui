@@ -17,9 +17,7 @@ define([
   var initialize = function(){
     var app_router = new AppRouter;
     
-    var topoView = new TopoView();
     var homeView = new HomeView();
-    homeView.topoView = topoView;
     homeView.render();
 
     app_router.on('route:defaultAction', function (actions) {

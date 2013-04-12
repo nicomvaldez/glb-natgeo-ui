@@ -9,13 +9,15 @@ define([
     var HomeView = Backbone.View.extend({
         
         el : ('.content'),
+        
+        initialize : function() {
+            this.topoView = new TopoView();  
+        },
 
         events : {
             'click button.button-filter' : 'filter',
             'click .add-topo' : 'postTopo'
         },
-        
-        topoView : undefined,
         
         postTopo : function() {
             var _this = this;
