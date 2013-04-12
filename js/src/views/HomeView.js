@@ -2,27 +2,43 @@ define([
     'jquery', 
     'backbone', 
     'text!templates/home.html',
-    'views/TopoView'
-], function($, Backbone, homeTemplate, TopoView) {
+    'views/TopoView',
+    'models/TopoModel'
+], function($, Backbone, homeTemplate, TopoView, TopoModel) {
 
     var HomeView = Backbone.View.extend({
-        el : $(".content"),
+        
+        el : ('.content'),
 
         events : {
-            'click button.button-filter' : 'filter'
+            'click button.button-filter' : 'filter',
+            'click .add-topo' : 'postTopo'
         },
-
-        initialize : function() {
+        
+        topoView : undefined,
+        
+        postTopo : function() {
             var _this = this;
-            _this.render();
-        },
+
+            var topo = new TopoModel();
+            
+            topo.save({
+                name : $('.name').val(),
+                description : $('.description').val()
+            }, {
+                success: function() {
+                    _this.render();
+                }
+            });
+        },        
 
         render : function() {
-            this.$el.append(homeTemplate);
+            this.$el.html(homeTemplate);
+            this.topoView.render();            
         },
 
         filter : function() {
-            var topoView = new TopoView();
+            this.topoView.render();
         }
     });
 

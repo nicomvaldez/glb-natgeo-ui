@@ -1,3 +1,4 @@
+.clear{clear:both}
 #wrapper{width:900px;margin:auto;font-family:verdana;font-size:12px}
 li.list{border-top:1px solid #96d1f8;background:linear-gradient(top,65 a9d7,#3e779d);background:#3e779d;padding:5px 10px;border-radius:8px;box-shadow:#000 0 1px 0;text-shadow:rgba(0,0,0,0.4) 0 1px 0;color:#fff;text-decoration:none;vertical-align:middle;text-transform:capitalize;list-style:none;width:100px;cursor:pointer;margin:3px}
 li.list:hover{border-top-color:#28597a;background:#28597a;color:#ccc}
@@ -7,6 +8,8 @@ header{padding:10px;text-align:center;}
 header h1{font-size:24px}
 footer{height:20px;padding:5px;text-align:center}
 #menu{float:left;height:80%;width:10%}
-#container{float:left}
+#container{padding-top:10px}
 .field{display:block;margin-top:5px;margin-bottom:5px;}
 .field div{float:left;width:200px}
+.filters,#addTopo{background-color:#18496a;padding:10px;width:40%;float:left;height:150px}
+#addTopo{color:#fff;padding-top:10px}

@@ -8,29 +8,26 @@ define([
 
     var TopoView = Backbone.View.extend({
     
-         initialize : function() {
+        el : ('.list'),
+        
+        render : function() {
+            
             var _this = this;
-            this.el = $(".list");
-
+            
             var onDataHandler = function(collection) {
-                _this.render();
+                var data = {
+                    topos : _this.topoCollection.toJSON(),
+                    _ : _
+                };
+                var compiledTemplate = _.template(topoListTemplate, data);
+                _this.$el.html(compiledTemplate);
             };
 
             this.topoCollection = new TopoCollection();
             this.topoCollection.fetch({
                 success : onDataHandler
             });
-        },
-
-        render : function() {
-            var data = {
-                topos : this.topoCollection.toJSON(),
-                _ : _
-            };
-            var compiledTemplate = _.template(topoListTemplate, data);
-            this.el.html(compiledTemplate);
         }
-
     });
 
     return TopoView;
