@@ -10,23 +10,28 @@ define([
     
         el : ('.list'),
         
-        render : function() {
+        initialize : function(){
             
             var _this = this;
             
             var onDataHandler = function(collection) {
-                var data = {
-                    topos : _this.topoCollection.toJSON(),
-                    _ : _
-                };
-                var compiledTemplate = _.template(topoListTemplate, data);
-                _this.$el.html(compiledTemplate);
+                _this.render();
             };
-
+            
             this.topoCollection = new TopoCollection();
             this.topoCollection.fetch({
                 success : onDataHandler
-            });
+            });            
+            
+        },
+        
+        render : function() {
+            var data = {
+                topos : this.topoCollection.toJSON(),
+                _ : _
+            };
+            var compiledTemplate = _.template(topoListTemplate, data);
+            this.$el.html(compiledTemplate);
         }
     });
 
