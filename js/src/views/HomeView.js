@@ -42,4 +42,5 @@ define( [ 'jquery', 'backbone', 'text!templates/home.html', 'views/TopoView',
 	});
 
 	return HomeView;
+
 });
