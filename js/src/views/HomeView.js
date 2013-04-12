@@ -23,10 +23,6 @@ define( [ 'jquery', 'backbone', 'text!templates/home.html', 'views/TopoView',
 			this.topoCollection.create( {
 				name : $('.name').val(),
 				description : $('.description').val()
-			}, {
-				success : function() {
-					_this.render();
-				}
 			});
 
 		},

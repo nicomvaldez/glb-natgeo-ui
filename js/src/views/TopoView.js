@@ -10,15 +10,10 @@ define( [ 'jquery', 'underscore', 'backbone', 'collections/TopoCollection',
 
 			var _this = this;
 
-			var onDataHandler = function(collection) {
-				_this.render();
-			};
-
 			this.topoCollection = new TopoCollection();
-			this.topoCollection.fetch( {
-				success : onDataHandler
-			});
-
+			this.topoCollection.fetch();
+			
+            this.listenTo(this.topoCollection,'all', this.render);
 		},
 
 		render : function() {
