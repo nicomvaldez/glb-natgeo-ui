@@ -18,7 +18,7 @@ define([
     var app_router = new AppRouter;
     
     var topoView = new TopoView();
-    var homeView = new HomeView();
+    var homeView = new HomeView(topoView.topoCollection);
     homeView.topoView = topoView;
     homeView.render();
 

@@ -9,6 +9,7 @@ define([
 		url : 'http://localhost:3000/topos',
 		initialize : function() {
 		}
+	
     });
 	
 	return TopoCollection;

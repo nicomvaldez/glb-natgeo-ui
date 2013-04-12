@@ -1,46 +1,45 @@
-define([
-    'jquery', 
-    'backbone', 
-    'text!templates/home.html',
-    'views/TopoView',
-    'models/TopoModel'
-], function($, Backbone, homeTemplate, TopoView, TopoModel) {
+define( [ 'jquery', 'backbone', 'text!templates/home.html', 'views/TopoView',
+		'models/TopoModel','collections/TopoCollection'], function($, Backbone, homeTemplate, TopoView,
+		TopoModel, TopoCollection) {
 
-    var HomeView = Backbone.View.extend({
-        
-        el : ('.content'),
+	var HomeView = Backbone.View.extend( {
 
-        events : {
-            'click button.button-filter' : 'filter',
-            'click .add-topo' : 'postTopo'
-        },
-        
-        topoView : undefined,
-        
-        postTopo : function() {
-            var _this = this;
+		el : ('.content'),
+		
+		initialize: function(collection) {
+			this.topoCollection = collection; 
+		},
 
-            var topo = new TopoModel();
-            
-            topo.save({
-                name : $('.name').val(),
-                description : $('.description').val()
-            }, {
-                success: function() {
-                    _this.render();
-                }
-            });
-        },        
+		events : {
+			'click button.button-filter' : 'filter',
+			'click .add-topo' : 'postTopo'
+		},
 
-        render : function() {
-            this.$el.html(homeTemplate);
-            this.topoView.render();            
-        },
+		topoView : undefined,
 
-        filter : function() {
-            this.topoView.render();
-        }
-    });
+		postTopo : function() {
+			var _this = this;
 
-    return HomeView;
+			this.topoCollection.create( {
+				name : $('.name').val(),
+				description : $('.description').val()
+			}, {
+				success : function() {
+					_this.render();
+				}
+			});
+
+		},
+
+		render : function() {
+			this.$el.html(homeTemplate);
+			this.topoView.render();
+		},
+
+		filter : function() {
+			this.topoView.render();
+		}
+	});
+
+	return HomeView;
 });

@@ -25,7 +25,6 @@ var allowCrossDomain = function(req, res, next) {
 app.configure(function() {
     app.use(express.bodyParser());
     app.use(allowCrossDomain);
-    app.use(app.router);
 });
 
 //demo data
@@ -72,6 +71,7 @@ app.post('/topos', function(req, res){
 	console.log(topos);
 	
 	res.send({name: topo.name, description: topo.description});
+
 });
 
 app.listen(3000);
