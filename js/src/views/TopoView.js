@@ -14,6 +14,8 @@ define( [ 'jquery', 'underscore', 'backbone', 'collections/TopoCollection',
 			this.topoCollection.fetch();
 			
             this.listenTo(this.topoCollection,'all', this.render);
+            
+            this.render();
 		},
 
 		render : function() {
